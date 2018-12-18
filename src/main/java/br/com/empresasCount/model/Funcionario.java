@@ -1,6 +1,7 @@
 package br.com.empresasCount.model;
 
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Table(name = "FUNCIONARIO")
@@ -12,6 +13,9 @@ public class Funcionario {
 	String nome;
 	@Column()
 	String eMail;
+	@Column()
+	@ManyToOne()
+	Empresa empresa;
 
 	public String getCPF() {
 		return CPF;
@@ -35,6 +39,14 @@ public class Funcionario {
 
 	public void seteMail(String eMail) {
 		this.eMail = eMail;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 
 }

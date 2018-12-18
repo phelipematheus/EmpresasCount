@@ -1,6 +1,7 @@
 package br.com.empresasCount.model;
 
 import javax.persistence.Column;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table(name = "EMPRESA")
@@ -11,6 +12,7 @@ public class Empresa {
 	@Column()
 	String nome;
 	@Column()
+	@OneToMany()
 	Funcionario filiado;
 
 	public String getCNPJ() {
