@@ -1,18 +1,22 @@
 package br.com.empresasCount.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+@Entity
 @Table(name = "EMPRESA")
 public class Empresa {
 
-	@Column()
+	@Id
+	@Column
 	String CNPJ;
-	@Column()
+	@Column
 	String nome;
-	@Column()
-	@OneToMany()
+	@Column
+	@OneToMany
 	Funcionario filiado;
 
 	public String getCNPJ() {
